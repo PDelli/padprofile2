@@ -1,98 +1,67 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <html>
 <head>
 <header>
 <style>
+@keyframes walking {
+	0% { transform: translateX(60%); }
+    100% { transform: translateX(-100%); }
 
-
+}
+@keyframes steps {
+	0% { transform: translateY(0px); }
+    50% { transform: translateY(5%); }
+    100% { transform: translateY(0px); }
+}
 body {
-	overflow: hidden;
-  background-image: url('https://cdn.discordapp.com/attachments/1086496076749611110/1149552369248522301/davyzq9-39a13c50-c7f0-4a9f-a712-58b3704dc213.png');
-  height: 100%;
-  width: 100%;
-  background-size: cover;
+  background-image: url('https://preview.redd.it/s2cu4t7x1x0c1.jpg?auto=webp&s=ccecc62d9a364e5e48a8a07b22e352f6324a27b9');
+  background-size: 100% 100%; /* Fills exactly, may distort the image */
   background-repeat: no-repeat;
-  background-color: black;
 }
 
-.mainframe{
-	top: 100px;
-    left: 100px;
-height: 559px;
-    width: 429px;
-    background-color: #cc0000;
+.walking{
+	animation-name: walking;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 	position: relative;
-    border-radius: 60px 60px 10px 10px;
-}
-
-.blood{
-	top:558px;
-    height: 100px;
-    width: auto;
-    background-image: url(https://gifdb.com/images/high/blood-drip-on-white-background-uzferz046cq2yc84.gif);
-    position: relative;
-    background-size: cover;
+    top: 50%;
+    left: 50%;}
+.character{
+	animation-name: steps;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    background-image: url(https://static.wikia.nocookie.net/delicious-in-dungeon/images/2/2d/Izutsumi_Winter_Outfit.png/);
     background-repeat: no-repeat;
-    border-radius: 10px;
-}
+ 	background-size:contain;
+    background-color:;
+	margin:absolute;
+    height: 45%;
+    
 
-.frame{
-height: 559px;
-    width: 425px;
-    top:-559px;
-    position: relative;
-    background-image: url(https://cdn.discordapp.com/attachments/175296135903051777/1149538904039505940/pexels-photo-1293120.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: coral;
-    border-radius: 60px 60px 60px 60px;
-    border-style: inset;
-    border-color: red;
-    overflow: hidden;
-}
-
-.picture{
-	height: 559px;
-    width: 429px;
-    position: relative;
-    background-image: url(https://media.discordapp.net/attachments/175296135903051777/1172786781268230275/Default_Purple_hair_man_black_armor_bat_3_0eec7ec8-2df7-4c2e-935b-22d4cd554a65_0.png?width=429&height=559);
-    background-size: cover;
-    background-repeat: no-repeat;
     
 }
-
-.nameplate{
-	top: 340px;
-    left: 150px;
-    rotate: -0deg;
-    height: 200px;
-    width: 400px;
-    position: relative;
-    background-image: url(https://cdn.discordapp.com/attachments/175296135903051777/1149547825290563675/Damon-08-09-2023.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 
 </style>
 </header>
 </head>
-<div style=position:absolute;bottom:1;right:1;margin:0;padding:0;>
-<audio controls autoplay id="myaudio" src=https://cdn.discordapp.com/attachments/175296135903051777/1151629995240861706/Bloody_Tears_on_Strahds_Organ_320_kbps.mp3 type=audio/mpeg>
-</audio>
-</div>
 <body>
-<div class="mainframe">
-<div class="blood">
-<div class="frame">
-<div class="picture">
-</div></div></div>
-<div class="nameplate">
+<div class ="walking">
+<div class="character">
+</div></div>
+
+</style>
+</header>
+</head>
+<div style=position:absolute;top:1;left:1;margin:0;padding:0;>
+<audio controls autoplay id="myaudio" src=https://cdn.discordapp.com/attachments/175296135903051777/1362617633379192872/Me_and_UFO_.mp3?ex=68030c10&is=6801ba90&hm=8f3afd7c4b61482728b790487dad9826cd6456a9f1c6fe9d9dff9b5a09b03f77& type=audio/mpeg>
+</audio>
 </div>
 
 <script>
   var audio = document.getElementById("myaudio");
   audio.volume = 0.02;
 </script>
-	
-	
 </body>
