@@ -37,12 +37,9 @@ body {
     background-image: url(https://static.wikia.nocookie.net/delicious-in-dungeon/images/2/2d/Izutsumi_Winter_Outfit.png/);
     background-repeat: no-repeat;
  	background-size:contain;
-    background-color:blue;
+    background-color:;
 	margin:absolute;
     height: 45%;
-    
-
-    
 }
 
 </style>
@@ -56,15 +53,14 @@ body {
 </style>
 </header>
 </head>
-<iframe src="https://cdn.discordapp.com/attachments/175296135903051777/1362625599033708735/250-milliseconds-of-silence.mp3?ex=6803137b&is=6801c1fb&hm=299f8b49b3a300d6f15a617fbbe071905cccb99ab5e6c1a7858082cbff1bf3f6&" allow="autoplay" id="audio" style="display: none"></iframe>
 <div style=position:absolute;top:1;left:1;margin:0;padding:0;>
-<audio controls autoplay muted id="myaudio" src=https://cdn.discordapp.com/attachments/175296135903051777/1362617633379192872/Me_and_UFO_.mp3?ex=68030c10&is=6801ba90&hm=8f3afd7c4b61482728b790487dad9826cd6456a9f1c6fe9d9dff9b5a09b03f77& type=audio/mpeg>
+<audio controls autoplay id="myaudio" src=https://cdn.discordapp.com/attachments/175296135903051777/1362617633379192872/Me_and_UFO_.mp3?ex=68030c10&is=6801ba90&hm=8f3afd7c4b61482728b790487dad9826cd6456a9f1c6fe9d9dff9b5a09b03f77& type=audio/mpeg>
 </audio>
 </div>
 
 <script>
   let audio = document.getElementById("myaudio");
   audio.volume = 0.02;
-  audio.muted = false;
+  audio.loop = true;
 </script>
 </body>
