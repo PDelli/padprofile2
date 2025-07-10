@@ -1,0 +1,102 @@
+<div id="tempestade-container"></div>
+<style>
+body{
+	background-image: url('https://www.magicmurals.com/media/catalog/product/cache/af1e2a1566fa2dbb552605e8822354b7/D/P/DPX-0001975266_1.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+#tempestade-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.particula-areia {
+  position: absolute;
+  background-color: #d2b48c; /* cor de areia */
+  border-radius: 50%;
+  opacity: 0.7;
+  animation-name: cair-particula;
+  animation-timing-function: linear;
+}
+
+@keyframes cair-particula {
+  from {
+    transform: translate(0, 50vw);
+  }
+  to {
+    transform: translate(100vw, 0); /* cair e mover um pouco pra direita */
+  }
+}
+.character{
+    margin-left: 50vw;
+    margin-top: 0vw;
+    height: 600px;
+    width: 450px;
+    position: absolute;
+    background-image: url(https://media.discordapp.net/attachments/175296135903051777/1392720382468816906/Leonardo_Anime_XL_Make_a_young_child_with_brown_skin_white_hai_3.png?ex=68708f6e&is=686f3dee&hm=16a137f599733696a6dfe32994396b8cf94e096647345327d776d6700897c1ec&=&format=webp&quality=lossless&width=638&height=960);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: fill;
+    border-radius: 50px;
+    border-style: inset;
+    border-color: blue;
+}
+</style>
+<div class=character></div>
+<div style=position:absolute;top:1;left:1;margin:0;padding:0;>
+<audio controls autoplay id="myaudio" src=https://audio.jukehost.co.uk/lyf1Vuc75hDvea2Ri7PE5sP2lndZ2VNC>
+</audio>
+</div>
+<script>
+  function gerarParticula() {
+    const particula = document.createElement('div');
+    particula.classList.add('particula-areia');
+
+    // Tamanho aleatório
+    const tamanho = Math.random() * 5 + 2; // 2px a 7px
+    particula.style.width = tamanho + 'px';
+    particula.style.height = tamanho + 'px';
+
+    // Posição inicial aleatória no topo
+    particula.style.left = Math.random() * window.innerWidth + 'px';
+    particula.style.top = '0px';
+
+    // Duração aleatória da animação
+    const duracao = Math.random() * 5 + 3; // 3s a 8s
+    particula.style.animationDuration = duracao + 's';
+
+    // Opacidade aleatória
+    particula.style.opacity = Math.random() * 0.5 + 0.3;
+
+    document.getElementById('tempestade-container').appendChild(particula);
+
+    // Remover após a animação
+    setTimeout(() => {
+      particula.remove();
+    }, duracao * 1000);
+  }
+
+  function iniciarTempestade(quantidade = 100) {
+    for (let i = 0; i < quantidade; i++) {
+      setTimeout(gerarParticula, i * 50); // espaçar a criação
+    }
+  }
+
+  // Disparar tempestade a cada 15s
+  setInterval(() => {
+    iniciarTempestade();
+  }, 15000);
+
+  // Também iniciar uma ao carregar a página
+  window.onload = () => iniciarTempestade();
+  
+  let audio = document.getElementById("myaudio");
+  audio.volume = 0.02;
+  audio.loop = true;
+</script>
